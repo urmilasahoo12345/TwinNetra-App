@@ -1,0 +1,31 @@
+@import url('[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap)');
+
+:root {
+  --navy:    #0B1120;
+  --navy-2:  #101928;
+  --navy-3:  #1A2540;
+  --saffron: #FF6B2B;
+  --teal:    #00C9C8;
+  --amber:   #FFB830;
+  --star:    #F0F4FF;
+  --muted:   #8A97B0;
+  --danger:  #FF4757;
+  --success: #2ED573;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--navy);
+  color: var(--star);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+}
+
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: var(--navy-2); }
+::-webkit-scrollbar-thumb { background: rgba(0,201,200,0.3); border-radius: 3px; }
+
+h1, h2, h3, h4 { font-family: 'Rajdhani', sans-serif; }
+
+.font-mono { font-family: 'Space Mono', monospace; }
