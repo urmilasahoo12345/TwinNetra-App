@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useAuthStore } from "../store/authStore";
 
-const BASE = "/api";
+const BASE = "https://twinnetra-app.onrender.com";
 
 function authHeader() {
   const token = useAuthStore.getState().token;

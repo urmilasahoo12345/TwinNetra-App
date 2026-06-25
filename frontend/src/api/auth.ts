@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE = "/api";
+const BASE = "https://twinnetra-app.onrender.com";
 
 export async function loginApi(email: string, password: string) {
   const res = await axios.post(`${BASE}/auth/login`, { email, password });
