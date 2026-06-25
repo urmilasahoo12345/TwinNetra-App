@@ -4,9 +4,9 @@ __pycache__/
 *.pyo
 .env
 *.pkl
-*.h5
+#*.h5
 *.nc
-*.csv
+#*.csv
 venv/
 .venv/
 
