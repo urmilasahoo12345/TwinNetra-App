@@ -14,7 +14,7 @@ export default function LiveMonitor() {
   const { data, isLoading, refetch } = useQuery({
     queryKey: ["live"],
     queryFn: fetchLiveComparison,
-    refetchInterval: 60_000,
+    refetchInterval: 300_000, // 👈 CHANGED: Now polls every 5 minutes (300,000 ms)
   });
 
   if (isLoading) return <LoadingSpinner text="Fetching live weather data..." />;
@@ -28,7 +28,9 @@ export default function LiveMonitor() {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
         <div>
           <h3 style={{ color: "var(--teal)" }}>Live vs Historical Comparison</h3>
-          <p style={{ fontSize: "0.78rem", color: "var(--muted)", marginTop: "0.2rem" }}>Auto-refreshes every 60 seconds · Open-Meteo API</p>
+          <p style={{ fontSize: "0.78rem", color: "var(--muted)", marginTop: "0.2rem" }}>
+            Auto-refreshes every 5 minutes · Open-Meteo API {/* 👈 CHANGED: Updated UI text */}
+          </p>
         </div>
         <button onClick={() => refetch()} style={{
           background: "rgba(0,201,200,0.07)", border: "1px solid rgba(0,201,200,0.25)",
