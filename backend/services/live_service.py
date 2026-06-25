@@ -1,3 +1,4 @@
+import time  # 👈 Added to handle rate pacing
 import requests
 import pandas as pd
 from services.climate_service import load_data
@@ -28,6 +29,10 @@ def fetch_live_comparison() -> list:
             )
             resp = requests.get(url, timeout=8)
             resp.raise_for_status()
+            
+            # 👈 Added: Sleep for 1 second right after getting data to respect rate limits
+            time.sleep(1) 
+            
             data = resp.json()["current"]
 
             live_temp = data["temperature_2m"]
@@ -66,5 +71,7 @@ def fetch_live_comparison() -> list:
                 "status": "Unavailable",
                 "error": str(e),
             })
+            # Also sleep during an error branch to prevent slamming the server on failures
+            time.sleep(1) 
 
     return results
