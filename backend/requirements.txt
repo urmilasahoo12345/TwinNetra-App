@@ -13,3 +13,4 @@ python-multipart>=0.0.9
 python-dotenv>=1.0.1
 pydantic>=2.7.4
 pydantic-settings>=2.3.3
+simplejson>=3.19.2
